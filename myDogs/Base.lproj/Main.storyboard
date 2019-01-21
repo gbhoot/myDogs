@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1ir-LS-gQT">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Dogs-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MainVC" customModule="myDogs" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Msk-4u-0Og">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="xjj-Or-Zgc">
+                            <size key="itemSize" width="183" height="185"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="dogCell" id="6lw-et-lRf" customClass="DogCell" customModule="myDogs" customModuleProvider="target">
+                                <rect key="frame" x="96" y="0.0" width="183" height="185"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                    <rect key="frame" x="0.0" y="0.0" width="183" height="185"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="efH-ZN-FlY">
+                                            <rect key="frame" x="0.0" y="0.0" width="183" height="185"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wqr-Xb-yUc">
+                                            <rect key="frame" x="69" y="80" width="45.5" height="25"/>
+                                            <fontDescription key="fontDescription" name="Avenir-HeavyOblique" family="Avenir" pointSize="18"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="efH-ZN-FlY" secondAttribute="trailing" id="4kS-iy-sSr"/>
+                                    <constraint firstItem="efH-ZN-FlY" firstAttribute="top" secondItem="6lw-et-lRf" secondAttribute="top" id="DQO-gO-uvJ"/>
+                                    <constraint firstItem="wqr-Xb-yUc" firstAttribute="centerY" secondItem="6lw-et-lRf" secondAttribute="centerY" id="KYO-go-14L"/>
+                                    <constraint firstItem="wqr-Xb-yUc" firstAttribute="centerX" secondItem="6lw-et-lRf" secondAttribute="centerX" id="Pjj-9n-AMe"/>
+                                    <constraint firstAttribute="bottom" secondItem="efH-ZN-FlY" secondAttribute="bottom" id="i4n-9S-tR0"/>
+                                    <constraint firstItem="efH-ZN-FlY" firstAttribute="leading" secondItem="6lw-et-lRf" secondAttribute="leading" id="uD7-MO-el1"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dogImageView" destination="efH-ZN-FlY" id="DFu-9u-RVK"/>
+                                    <outlet property="dogNameLbl" destination="wqr-Xb-yUc" id="1py-M6-8td"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                    </collectionView>
+                    <navigationItem key="navigationItem" title="Dogs" id="xZb-5G-kpx">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="oTd-h7-Job">
+                            <connections>
+                                <segue destination="aGA-Su-fFT" kind="show" id="EXt-ne-4vi"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="dogsCollectionView" destination="Msk-4u-0Og" id="iHH-Ix-pWQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1076" y="132.68365817091455"/>
+        </scene>
+        <!--Add Dog-->
+        <scene sceneID="P2r-SI-Ab8">
+            <objects>
+                <viewController title="Add Dog" id="aGA-Su-fFT" customClass="DogVC" customModule="myDogs" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Gzf-9t-GP8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="kap-bX-t7T">
+                                <rect key="frame" x="25" y="94" width="325" height="378.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="7pA-8D-UT5">
+                                        <rect key="frame" x="0.0" y="0.0" width="325" height="58.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dog Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lrc-qx-5Zl">
+                                                <rect key="frame" x="0.0" y="0.0" width="325" height="23.5"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                                <color key="textColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Dog name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6EY-5e-DZD">
+                                                <rect key="frame" x="0.0" y="28.5" width="325" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="lrc-qx-5Zl" firstAttribute="leading" secondItem="7pA-8D-UT5" secondAttribute="leading" id="8JZ-op-RR8"/>
+                                            <constraint firstItem="6EY-5e-DZD" firstAttribute="leading" secondItem="7pA-8D-UT5" secondAttribute="leading" id="Wv3-k4-nd1"/>
+                                            <constraint firstAttribute="trailing" secondItem="6EY-5e-DZD" secondAttribute="trailing" id="ibf-Hb-qjv"/>
+                                            <constraint firstAttribute="trailing" secondItem="lrc-qx-5Zl" secondAttribute="trailing" id="v9i-Cn-4De"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Cpu-7a-OkI">
+                                        <rect key="frame" x="0.0" y="83.5" width="325" height="58.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dog Color:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="acy-d6-uCC">
+                                                <rect key="frame" x="0.0" y="0.0" width="325" height="23.5"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                                <color key="textColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Dog color" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mln-2l-LDu">
+                                                <rect key="frame" x="0.0" y="28.5" width="325" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="acy-d6-uCC" secondAttribute="trailing" id="EGG-Sx-ExO"/>
+                                            <constraint firstAttribute="trailing" secondItem="mln-2l-LDu" secondAttribute="trailing" id="MUC-fB-xUi"/>
+                                            <constraint firstItem="mln-2l-LDu" firstAttribute="leading" secondItem="Cpu-7a-OkI" secondAttribute="leading" id="esN-Fg-Nmx"/>
+                                            <constraint firstItem="acy-d6-uCC" firstAttribute="leading" secondItem="Cpu-7a-OkI" secondAttribute="leading" id="sQB-Jb-Mp0"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Sgk-Aa-6mv">
+                                        <rect key="frame" x="0.0" y="167" width="325" height="58.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dog Race:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p7T-Ap-TuS">
+                                                <rect key="frame" x="0.0" y="0.0" width="325" height="23.5"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                                <color key="textColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Dog race" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WYQ-dB-n3O">
+                                                <rect key="frame" x="0.0" y="28.5" width="325" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="WYQ-dB-n3O" secondAttribute="trailing" id="927-QQ-mnu"/>
+                                            <constraint firstItem="p7T-Ap-TuS" firstAttribute="leading" secondItem="Sgk-Aa-6mv" secondAttribute="leading" id="ePe-4i-oTc"/>
+                                            <constraint firstAttribute="trailing" secondItem="p7T-Ap-TuS" secondAttribute="trailing" id="mIg-5U-osc"/>
+                                            <constraint firstItem="WYQ-dB-n3O" firstAttribute="leading" secondItem="Sgk-Aa-6mv" secondAttribute="leading" id="rl4-G5-WiI"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="center" semanticContentAttribute="spatial" distribution="equalCentering" alignment="center" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vPL-mS-8KK">
+                                        <rect key="frame" x="0.0" y="250.5" width="325" height="128"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" horizontalHuggingPriority="249" translatesAutoresizingMaskIntoConstraints="NO" id="6VJ-Cu-aK5">
+                                                <rect key="frame" x="0.0" y="0.0" width="102.5" height="128"/>
+                                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </view>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tVG-Oe-bRm" customClass="RoundedButton" customModule="myDogs" customModuleProvider="target">
+                                                <rect key="frame" x="102.5" y="4" width="120" height="120"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="120" id="mAS-wl-bmE"/>
+                                                    <constraint firstAttribute="width" constant="120" id="po9-2I-ry9"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Avenir-HeavyOblique" family="Avenir" pointSize="17"/>
+                                                <state key="normal" title="Button">
+                                                    <color key="titleColor" red="0.0048598507420000003" green="0.096086271109999996" blue="0.57499289509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                            </button>
+                                            <view contentMode="scaleToFill" horizontalHuggingPriority="249" translatesAutoresizingMaskIntoConstraints="NO" id="NFC-bm-q5e">
+                                                <rect key="frame" x="222.5" y="0.0" width="102.5" height="128"/>
+                                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="tVG-Oe-bRm" firstAttribute="leading" secondItem="6VJ-Cu-aK5" secondAttribute="trailing" id="Lwa-vX-ygn"/>
+                                            <constraint firstItem="6VJ-Cu-aK5" firstAttribute="leading" secondItem="vPL-mS-8KK" secondAttribute="leading" id="bDV-CG-ZOH"/>
+                                            <constraint firstItem="tVG-Oe-bRm" firstAttribute="centerX" secondItem="vPL-mS-8KK" secondAttribute="centerX" id="rhu-YI-ygy"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Sgk-Aa-6mv" firstAttribute="leading" secondItem="kap-bX-t7T" secondAttribute="leading" id="0I7-FO-Y06"/>
+                                    <constraint firstItem="vPL-mS-8KK" firstAttribute="leading" secondItem="kap-bX-t7T" secondAttribute="leading" id="6SN-W7-e2H"/>
+                                    <constraint firstAttribute="trailing" secondItem="Cpu-7a-OkI" secondAttribute="trailing" id="NnP-Sa-eW6"/>
+                                    <constraint firstItem="Cpu-7a-OkI" firstAttribute="leading" secondItem="kap-bX-t7T" secondAttribute="leading" id="ORE-IV-xZe"/>
+                                    <constraint firstAttribute="trailing" secondItem="vPL-mS-8KK" secondAttribute="trailing" id="UKi-LA-iwz"/>
+                                    <constraint firstItem="7pA-8D-UT5" firstAttribute="leading" secondItem="kap-bX-t7T" secondAttribute="leading" id="kIE-2Q-z8S"/>
+                                    <constraint firstAttribute="trailing" secondItem="Sgk-Aa-6mv" secondAttribute="trailing" id="pha-re-Jfq"/>
+                                    <constraint firstAttribute="trailing" secondItem="7pA-8D-UT5" secondAttribute="trailing" id="tTw-f9-11J"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="waR-qf-V01" customClass="RoundedButton" customModule="myDogs" customModuleProvider="target">
+                                <rect key="frame" x="100" y="502.5" width="175" height="38"/>
+                                <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="19"/>
+                                <state key="normal" title="Add">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="submitButtonPressed:" destination="aGA-Su-fFT" eventType="touchUpInside" id="neQ-zw-NDq"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="pNY-9S-VbH" firstAttribute="trailing" secondItem="waR-qf-V01" secondAttribute="trailing" constant="100" id="SeU-yd-gsb"/>
+                            <constraint firstItem="kap-bX-t7T" firstAttribute="leading" secondItem="pNY-9S-VbH" secondAttribute="leading" constant="25" id="gxE-Tr-czc"/>
+                            <constraint firstItem="waR-qf-V01" firstAttribute="leading" secondItem="pNY-9S-VbH" secondAttribute="leading" constant="100" id="jD3-4s-afS"/>
+                            <constraint firstItem="waR-qf-V01" firstAttribute="top" secondItem="kap-bX-t7T" secondAttribute="bottom" constant="30" id="mDY-eC-Ug8"/>
+                            <constraint firstItem="kap-bX-t7T" firstAttribute="top" secondItem="pNY-9S-VbH" secondAttribute="top" constant="30" id="x1U-YN-q6j"/>
+                            <constraint firstItem="pNY-9S-VbH" firstAttribute="trailing" secondItem="kap-bX-t7T" secondAttribute="trailing" constant="25" id="x2K-Vs-R4J"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="pNY-9S-VbH"/>
+                    </view>
+                    <connections>
+                        <outlet property="dogColorLbl" destination="mln-2l-LDu" id="z7F-wK-MA7"/>
+                        <outlet property="dogImageButton" destination="tVG-Oe-bRm" id="RIX-nO-LNA"/>
+                        <outlet property="dogNameLbl" destination="6EY-5e-DZD" id="Q4r-Yk-LeL"/>
+                        <outlet property="dogRaceLbl" destination="WYQ-dB-n3O" id="ePJ-n0-6gV"/>
+                        <outlet property="submitButton" destination="waR-qf-V01" id="eIQ-14-3hG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Peh-zY-bdr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1941.5999999999999" y="132.68365817091455"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="RZK-2C-Uvr">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1ir-LS-gQT" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Zf1-28-dkX">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="1Rn-YP-SNf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tOn-l9-aEK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="98" y="133"/>
+        </scene>
+    </scenes>
+</document>
